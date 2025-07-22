@@ -12,14 +12,14 @@ import SkillInput from "./5_skills/SkillsInput";
 import SkillDisplay from "./5_skills/SkillsDisplay";
 
 export default function App() {
-  const [image, setImage] = useState('src/kep.jpg');
+  const [image, setImage] = useState('src/placeholder.png');
 
   const handleImageUpload = (e) => {
     setImage(URL.createObjectURL(e.target.files[0]));
   };
 
-  const [firstName, setFirstName] = useState("Botond");
-  const [lastName, setLastName] = useState("Meszaros");
+  const [firstName, setFirstName] = useState("John");
+  const [lastName, setLastName] = useState("Lawrence");
   const [title, setTitle] = useState("Software Engineer");
 
   const [phoneNum, setPhoneNum] = useState("3630764832");

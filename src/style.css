@@ -9,22 +9,24 @@ p {
 
 .main {
   display: flex;
-  height: 1400px;
   background-color: lightblue;
   font-family: code;
+  --dblue: rgb(2, 0, 45);
 }
 
 .displays {
+  margin-top: 10px;
   padding-top: 20px;
   display: grid;
+  height: 1400px;
   grid-template-columns: 495px 495px;
   grid-template-rows: 345px 345px 345px 345px;
-  background-color: lightgrey;
+  background-color: white;
   padding: 30px;
+  border: 1px solid var(--dblue);
 }
 
 .displays > div {
-  border: 1px solid red;
   padding: 20px;
   margin: 15px;
 }
@@ -35,6 +37,17 @@ p {
   align-items: center;
   gap: 30px;
   grid-column: 1 / span 2;
+  background-color: var(--dblue);
+  color: white;
+  border-radius: 10px;
+}
+
+.contactsDisplay,
+.educationDisplay,
+.skillsDisplay,
+.experienceDisplay {
+  border: 3px solid var(--dblue);
+  color: var(--dblue);
 }
 
 .headerDisplay > img {
@@ -70,30 +83,32 @@ p {
   margin-bottom: 30px;
 }
 
-.inputs{
-    padding:30px
+.inputs {
+  padding: 30px;
 }
 
-.inputs > div{
-display: flex;
-flex-direction: column;
-gap: 7px;
+.inputs > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
 
-.inputs > div > div{
-display: flex;
-flex-direction: column;
-gap: 7px;
+.inputs > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
 
-.contactsTitle, .eduTitle, .expTitle, .skillsTitle{
-    margin: 0;
-    margin-top: 30px;
-    font-size: 1.5rem;
+.contactsTitle,
+.eduTitle,
+.expTitle,
+.skillsTitle {
+  margin: 0;
+  margin-top: 30px;
+  font-size: 1.5rem;
 }
 
-
-.namerole{
-    margin: 0;
-    font-size: 1.5rem;
+.namerole {
+  margin: 0;
+  font-size: 1.5rem;
 }
