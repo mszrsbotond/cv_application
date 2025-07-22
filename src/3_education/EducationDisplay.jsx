@@ -1,9 +1,10 @@
-export default function EducationDisplay({eduList}){
-    return(
-        <ul>
-            {eduList.map((item) => (
-                <li key={item.id}>{item}</li>
-            ))}
-        </ul>
-    )
+export default function EducationDisplay({eduInputFields}){
+return(
+    eduInputFields.map((eduInputField) => (
+        <div>
+            <h1>{eduInputField.school}</h1>
+            <h3>{eduInputField.degree}</h3>
+        </div>
+    ))
+)
 }
