@@ -9,7 +9,7 @@ p {
 
 .main {
   display: flex;
-  background-color: lightblue;
+  background-color: var(--dblue);
   font-family: code;
   --dblue: rgb(2, 0, 45);
 }
@@ -21,7 +21,7 @@ p {
   height: 1400px;
   grid-template-columns: 495px 495px;
   grid-template-rows: 345px 345px 345px 345px;
-  background-color: white;
+  background-color: rgb(225, 225, 225);
   padding: 30px;
   border: 1px solid var(--dblue);
 }
@@ -91,12 +91,14 @@ p {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  color: white;
 }
 
 .inputs > div > div {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  color: white;
 }
 
 .contactsTitle,
