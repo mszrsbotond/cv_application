@@ -1,9 +1,14 @@
-export default function HeaderDisplay({ image, fullName, title }) {
+export default function HeaderDisplay({ image, firstName, lastName, title }) {
   return (
-    <div>
-      <img src={image} alt="" height='200px'/>
-      <h1>{fullName}</h1>
-      <h3>{title}</h3>
+    <div className="headerDisplay">
+      <img src={image} alt=""/>
+      <div className="info">
+        <div className="name">
+          <p>{firstName}</p>
+          <p>{lastName}</p>
+        </div>
+        <p>{title}</p>
+      </div>
     </div>
   );
 }

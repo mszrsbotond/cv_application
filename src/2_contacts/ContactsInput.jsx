@@ -5,7 +5,8 @@ export default function ContactsInput({
   setSite,
 }) {
   return (
-    <div>
+    <div className="contactsInput">
+        <h1 className="contactsTitle">Contacts</h1>
       <label htmlFor="phone">Phone Number</label>
       <input
         type="text"

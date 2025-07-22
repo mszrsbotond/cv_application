@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './style.css'
 import HeaderInput from "./1_header/HeaderInput";
 import HeaderDisplay from "./1_header/HeaderDisplay";
 import ContactsInput from "./2_contacts/ContactsInput";
@@ -11,23 +12,23 @@ import SkillInput from "./5_skills/SkillsInput";
 import SkillDisplay from "./5_skills/SkillsDisplay";
 
 export default function App() {
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState('src/kep.jpg');
 
   const handleImageUpload = (e) => {
     setImage(URL.createObjectURL(e.target.files[0]));
   };
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [title, setTitle] = useState("");
+  const [firstName, setFirstName] = useState("Botond");
+  const [lastName, setLastName] = useState("Meszaros");
+  const [title, setTitle] = useState("Software Engineer");
 
-  const [phoneNum, setPhoneNum] = useState("");
-  const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
-  const [site, setSite] = useState("");
+  const [phoneNum, setPhoneNum] = useState("3630764832");
+  const [address, setAddress] = useState("Hungary, Budapest Bécsi út 17");
+  const [email, setEmail] = useState("botondtest@gmail.com");
+  const [site, setSite] = useState("https://github.com/mszrsbotond");
 
   const [eduInputFields, setEduInputFields] = useState([
-    { school: "", degree: "" },
+    { school: "Obudai Egyetem", degree: "Computer Engineering" },
   ]);
 
   const handleEduValueChange = (index, type, event) => {
@@ -41,7 +42,7 @@ export default function App() {
   };
 
   const [expInputFields, setExpInputFields] = useState([
-    { company: "", role: "", desc: "" },
+    { company: "Google", role: "Software Architect", desc: "Designed high usage APIs" },
   ]);
 
   const handleExpValueChange = (index, type, event) => {
@@ -54,68 +55,66 @@ export default function App() {
     setExpInputFields([...expInputFields, { company: "", role: "", desc: "" }]);
   };
 
+  const [skillInputFields, setSkillInputFields] = useState([{ skill: "React" }]);
 
-const [skillInputFields, setSkillInputFields] = useState([
-    {skill:""},
-  ]);
-
-  const handleSkillValueChange = (index,event) => {
+  const handleSkillValueChange = (index, event) => {
     const values = [...skillInputFields];
     values[index].skill = event.target.value;
     setSkillInputFields(values);
   };
 
   const handleAddSkillField = () => {
-    setSkillInputFields([...skillInputFields, { skill:""}]);
+    setSkillInputFields([...skillInputFields, { skill: "" }]);
   };
 
   return (
-    <div>
-      <HeaderInput
-        handleImageUpload={handleImageUpload}
-        setFirstName={setFirstName}
-        setLastName={setLastName}
-        setTitle={setTitle}
-      />
-      <ContactsInput
-        setPhoneNum={setPhoneNum}
-        setAddress={setAddress}
-        setEmail={setEmail}
-        setSite={setSite}
-      />
-
-      <EducationInput
-        eduInputFields={eduInputFields}
-        handleEduValueChange={handleEduValueChange}
-        handleAddEduField={handleAddEduField}
-      />
-
-      <ExperienceInput
-        expInputFields={expInputFields}
-        handleExpValueChange={handleExpValueChange}
-        handleAddExpField={handleAddExpField}
-      />
-
-<SkillInput
-        skillInputFields={skillInputFields}
-        handleSkillValueChange={handleSkillValueChange}
-        handleAddSkillField={handleAddSkillField}
-      />
-
-      <HeaderDisplay
-        image={image}
-        fullName={firstName + " " + lastName}
-        title={title}
-      />
-      <ContactsDisplay
-        phoneNum={phoneNum}
-        address={address}
-        email={email}
-        site={site}
-      />
-      <EducationDisplay eduInputFields={eduInputFields} />
-      <ExperienceDisplay expInputFields={expInputFields} />
-      <SkillDisplay skillInputFields={skillInputFields} />
+    <div className="main">
+      <div className="inputs">
+        <HeaderInput
+          handleImageUpload={handleImageUpload}
+          setFirstName={setFirstName}
+          setLastName={setLastName}
+          setTitle={setTitle}
+        />
+        <ContactsInput
+          setPhoneNum={setPhoneNum}
+          setAddress={setAddress}
+          setEmail={setEmail}
+          setSite={setSite}
+        />
+        <EducationInput
+          eduInputFields={eduInputFields}
+          handleEduValueChange={handleEduValueChange}
+          handleAddEduField={handleAddEduField}
+        />
+        <ExperienceInput
+          expInputFields={expInputFields}
+          handleExpValueChange={handleExpValueChange}
+          handleAddExpField={handleAddExpField}
+        />
+        <SkillInput
+          skillInputFields={skillInputFields}
+          handleSkillValueChange={handleSkillValueChange}
+          handleAddSkillField={handleAddSkillField}
+        />
+      </div>
+      <div className="displays">
+        <HeaderDisplay
+          image={image}
+          firstName={firstName}
+          lastName={lastName}
+          title={title}
+        />
+        <ContactsDisplay
+          phoneNum={phoneNum}
+          address={address}
+          email={email}
+          site={site}
+        />
+        <EducationDisplay eduInputFields={eduInputFields} />
+        <SkillDisplay skillInputFields={skillInputFields} />
+        <ExperienceDisplay expInputFields={expInputFields} />
+      </div>
     </div>
   );
 }

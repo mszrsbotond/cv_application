@@ -1,10 +1,13 @@
 export default function ContactsDisplay({phoneNum, address, email, site}){
 return(
-    <div>
-        <h1>{phoneNum}</h1>
-        <h1>{address}</h1>
-        <h1>{email}</h1>
-        <h1>{site}</h1>
+    <div className="contactsDisplay">
+        <h1>Contacts</h1>
+        <div className="contacts">
+            <p>{phoneNum}</p>
+            <p>{address}</p>
+            <p>{email}</p>
+            <p>{site}</p>
+        </div>
     </div>
 )
 }

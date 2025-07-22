@@ -1,0 +1,99 @@
+@font-face {
+  font-family: code;
+  src: url(./BitcountGridSingle-Medium.ttf);
+}
+
+p {
+  margin: 5px;
+}
+
+.main {
+  display: flex;
+  height: 1400px;
+  background-color: lightblue;
+  font-family: code;
+}
+
+.displays {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 495px 495px;
+  grid-template-rows: 345px 345px 345px 345px;
+  background-color: lightgrey;
+  padding: 30px;
+}
+
+.displays > div {
+  border: 1px solid red;
+  padding: 20px;
+  margin: 15px;
+}
+
+.headerDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  grid-column: 1 / span 2;
+}
+
+.headerDisplay > img {
+  width: 200px;
+  border-radius: 20px;
+}
+
+.experience {
+  margin-bottom: 15px;
+}
+
+.name > p {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.company {
+  font-size: 1.7rem;
+  margin-bottom: 0px;
+}
+
+.role {
+  margin-top: 0px;
+}
+
+.desc {
+  font-size: 0.7rem;
+}
+
+.experienceDisplay {
+  grid-row: 2 / span3;
+  grid-column: 2;
+  margin-bottom: 30px;
+}
+
+.inputs{
+    padding:30px
+}
+
+.inputs > div{
+display: flex;
+flex-direction: column;
+gap: 7px;
+}
+
+.inputs > div > div{
+display: flex;
+flex-direction: column;
+gap: 7px;
+}
+
+.contactsTitle, .eduTitle, .expTitle, .skillsTitle{
+    margin: 0;
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+
+.namerole{
+    margin: 0;
+    font-size: 1.5rem;
+}

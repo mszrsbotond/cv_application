@@ -4,7 +4,8 @@ export default function SkillInput({
   handleAddSkillField,
 }) {
   return (
-    <div>
+    <div className="skillsInput">
+        <h1 className="skillsTitle">Skills</h1>
       {skillInputFields.map((skillInputField, index) => (
         <div>
           <input

@@ -5,7 +5,8 @@ export default function HeaderInput({
   setTitle,
 }) {
   return (
-    <div>
+    <div className="headerInput">
+      <h1 className="namerole">Name and Role</h1>
       <label htmlFor="image">Image</label>
       <input
         type="file"
